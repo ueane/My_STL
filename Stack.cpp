@@ -59,12 +59,8 @@ public:
         this->count = pre + 1;
         this->items = new_items;
     }
-    T front() {
-        if(count != 0) {
-            return items[count - 1];
-        } else {
-            printf("Stack is empty\n");
-        }
+    T top() {    
+        return items[count - 1];
     }
     void pop() {
         if(count == 0) {
@@ -141,6 +137,11 @@ int main() {
     s.pop();
     s.pop();
     PrintStack(s);
+    cout << s.size() << endl;
+
+    cout << s.top() << endl;
+
+    s.clean();
     cout << s.size() << endl;
 
     return 0;
